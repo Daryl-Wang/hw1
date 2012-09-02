@@ -9,7 +9,7 @@ class Numeric
     end
   end
 end
-
+puts 44.yen()
 class String
   # YOUR CODE HERE
 end
