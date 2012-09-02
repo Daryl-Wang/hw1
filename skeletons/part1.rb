@@ -1,7 +1,18 @@
 def palindrome?(str)
-  # YOUR CODE HERE
+  wordsOnly = str.downcase.gsub( /\W/, "" )
+  firstHalf = wordsOnly[ 0, ( wordsOnly.size / 2 )  ]
+  not wordsOnly.reverse[ 0, ( wordsOnly.size / 2 )  ].match( firstHalf ).nil?
 end
 
 def count_words(str)
-  # YOUR CODE HERE
+  counts = {}
+  str.downcase.scan( /\b(\w+)\b/ ) do | word |
+    if counts[ word ]
+      counts[ word ] += 1
+    else
+      counts[ word ] = 1
+    end
+  end
+  return counts
 end
+
