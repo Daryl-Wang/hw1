@@ -11,9 +11,7 @@ def combine_anagrams(words)
     end
   end
   sortedWords.values.each do | group |
-    if group.size > 1
       anagrams << group
-    end
   end
   return anagrams
 end
