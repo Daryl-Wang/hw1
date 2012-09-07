@@ -28,12 +28,10 @@ end
 
 module Enumerable
   def palindrome?
-    arr = self.to_a
-    arr.size do | index |
-      if arr[ index ] != arr[ arr.size - index - 1 ]
-        return false
-      end
+    arr = []
+    self.reverse_each do | element |
+      arr << element
     end
-    return true
+    return arr == self.to_a
   end
 end
