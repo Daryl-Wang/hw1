@@ -28,10 +28,15 @@ end
 
 module Enumerable
   def palindrome?
-    arr = []
+    rArr = []
     self.reverse_each do | element |
+      rArr << element
+    end
+    arr = []
+    self.each do | element |
       arr << element
     end
-    return arr == self.to_a
+    return rArr == arr
   end
 end
+
