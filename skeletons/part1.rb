@@ -7,6 +7,7 @@ end
 def count_words(str)
   counts = {}
   str.downcase.scan( /\b(\w+)\b/ ) do | word |
+    word = word[0]
     if counts[ word ]
       counts[ word ] += 1
     else
