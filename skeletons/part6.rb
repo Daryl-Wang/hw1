@@ -17,21 +17,14 @@ class Numeric
   end
 end
 
-puts 44.yen
-puts 5.dollars.in( :euro )
-puts 10.euros.in( :rupees )
-
-require 'part1'
 class String
   # YOUR CODE HERE
   def palindrome?
-    return Part1.palindrome?( self )
+    wordsOnly = self.downcase.gsub( /\W/, "" )
+    firstHalf = wordsOnly[ 0, ( wordsOnly.size / 2 )  ]
+    not wordsOnly.reverse[ 0, ( wordsOnly.size / 2 )  ].match( firstHalf ).nil?
   end
 end
-
-# CHECK IF THIS IS RIGHT
-puts "foo".palindrome?
-puts "Madam I'm Adam".palindrome?
 
 module Enumerable
   def palindrome?
@@ -44,4 +37,3 @@ module Enumerable
     return true
   end
 end
-puts [1, 2, 3, 2, 1].palindrome?
