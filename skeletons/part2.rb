@@ -24,8 +24,8 @@ def rps_game_winner(game)
     else
       return game[ 1 ]
     end
-  else
-    if /P/i =~ strat1
+  elsif /P/i =~ strat0
+    if /R/i =~ strat1
       return game[ 0 ]
     else
       return game[ 1 ]
@@ -41,5 +41,5 @@ def rps_tournament_winner(tournament)
     winner1 = rps_tournament_winner( tournament[ 1 ] )
     return rps_game_winner( [ winner0, winner1 ] )
   end
-
 end
+
